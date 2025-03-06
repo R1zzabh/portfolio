@@ -64,15 +64,15 @@ const Contact = () => {
                 <a href="mailto:rishabh@example.com" className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">rishabh@example.com</a>
               </div>
               <div className="flex space-x-6 mt-8">
-                <a href="https://github.com/rishabh" target="_blank" rel="noopener noreferrer" 
+                <a href="https://github.com/R1zzabh" target="_blank" rel="noopener noreferrer" 
                   className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
                   <FaGithub className="text-3xl" />
                 </a>
-                <a href="https://linkedin.com/in/rishabh" target="_blank" rel="noopener noreferrer" 
+                <a href="https://www.linkedin.com/in/-rishabh-mishra-/" target="_blank" rel="noopener noreferrer" 
                   className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
                   <FaLinkedin className="text-3xl" />
                 </a>
-                <a href="https://twitter.com/rishabh" target="_blank" rel="noopener noreferrer" 
+                <a href="https://www.instagram.com/rishabh_0208_/" target="_blank" rel="noopener noreferrer" 
                   className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
                   <FaTwitter className="text-3xl" />
                 </a>

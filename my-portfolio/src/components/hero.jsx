@@ -17,7 +17,7 @@ const GlitchText = ({ text, className }) => {
 
 const Hero = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between">
+    <div className="w-full min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-12 lg:px-24 overflow-hidden">
       <motion.div 
         className="md:w-1/2 mb-10 md:mb-0"
         initial={{ opacity: 0, x: -50 }}
@@ -77,7 +77,7 @@ const Hero = () => {
       </motion.div>
       
       <motion.div 
-        className="md:w-1/2 flex justify-center"
+        className="md:w-1/2 flex justify-center relative"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
