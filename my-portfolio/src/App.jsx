@@ -6,8 +6,7 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
-import ParticleBackground from "./components/ParticleBackground";
-import LightModeVanta from "./components/LightModeVanta";
+import ParticleBackground from "./components/ParticleBackground"; // Use one particle system for both themes
 import { motion } from "framer-motion";
 
 function App() {
@@ -43,11 +42,15 @@ function App() {
         initial={{ clipPath: `circle(0px at ${togglePosition.x}px ${togglePosition.y}px)` }}
         animate={{ clipPath: `circle(150% at ${togglePosition.x}px ${togglePosition.y}px)` }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
-        className={`absolute inset-0 ${darkMode === "dark" ? "bg-gray-900" : "bg-gray-50"}`}
+        className={`absolute inset-0 ${
+          darkMode === "dark"
+            ? "bg-gray-900 text-white"
+            : "bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 text-gray-900"
+        }`}
       />
 
-      {/* Background Animations */}
-      {darkMode === "dark" ? <ParticleBackground /> : <LightModeVanta />}
+      {/* Particle Effects (Same animation for both modes) */}
+      <ParticleBackground darkMode={darkMode} />
 
       {/* Navbar should be fixed at the top */}
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
