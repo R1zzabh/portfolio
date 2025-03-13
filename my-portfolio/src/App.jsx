@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
-import Hero from "./components/hero";
+import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import ParticleBackground from "./components/ParticleBackground";
+import LightModeParticles from "./components/LightModeParticles";
 import { motion } from "framer-motion";
 
 function App() {
@@ -35,11 +36,7 @@ function App() {
   };
 
   return (
-    <div
-      className={`relative min-h-screen overflow-hidden transition-colors duration-[1500ms] ease-in-out ${
-        darkMode === "dark" ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
-      }`}
-    >
+    <div className="relative min-h-screen overflow-hidden transition-colors duration-[1500ms] ease-in-out">
       {/* Radial Expansion Effect */}
       <motion.div
         key={darkMode}
@@ -51,11 +48,13 @@ function App() {
         }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
         className={`absolute inset-0 ${
-          darkMode === "dark" ? "bg-gray-900" : "bg-gray-50"
+          darkMode === "dark" ? "bg-gray-900 text-white" : "bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 text-gray-900"
         }`}
       />
 
-      <ParticleBackground />
+      {/* Particle Effects */}
+      {darkMode === "dark" ? <ParticleBackground /> : <LightModeParticles />}
+
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
       <main className="container mx-auto px-4 py-8 relative z-10">
