@@ -35,16 +35,12 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden transition-colors duration-[1500ms] ease-in-out">
+    <div className={`relative min-h-screen overflow-hidden transition-colors duration-[1500ms] ease-in-out`}>
       {/* Radial Expansion Effect */}
       <motion.div
         key={darkMode}
-        initial={{
-          clipPath: `circle(0px at ${togglePosition.x}px ${togglePosition.y}px)`,
-        }}
-        animate={{
-          clipPath: `circle(150% at ${togglePosition.x}px ${togglePosition.y}px)`,
-        }}
+        initial={{ clipPath: `circle(0px at ${togglePosition.x}px ${togglePosition.y}px)` }}
+        animate={{ clipPath: `circle(150% at ${togglePosition.x}px ${togglePosition.y}px)` }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
         className={`absolute inset-0 ${
           darkMode === "dark"
@@ -56,6 +52,7 @@ function App() {
       {/* Particle Effects (Same animation for both modes) */}
       <ParticleBackground darkMode={darkMode} />
 
+      {/* Navbar should be fixed at the top */}
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
       <main className="container mx-auto px-4 py-8 relative z-10">
