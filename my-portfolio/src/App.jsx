@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar";
 import Hero from "./components/hero";
-import Projects from "./components/Projects";
+import Projects from "./components/Project";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Blog from "./components/Blog";
@@ -10,7 +10,6 @@ import ParticleBackground from "./components/ParticleBackground";
 import { motion } from "framer-motion";
 
 function App() {
-  // Check localStorage for theme, otherwise use system preference
   const getInitialTheme = () => {
     const storedTheme = localStorage.getItem("theme");
     if (storedTheme) return storedTheme;
@@ -18,6 +17,7 @@ function App() {
   };
 
   const [darkMode, setDarkMode] = useState(getInitialTheme);
+  const [togglePosition, setTogglePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     if (darkMode === "dark") {
@@ -28,16 +28,32 @@ function App() {
     localStorage.setItem("theme", darkMode);
   }, [darkMode]);
 
-  const toggleDarkMode = () => {
+  const toggleDarkMode = (event) => {
+    const { clientX, clientY } = event;
+    setTogglePosition({ x: clientX, y: clientY });
     setDarkMode(darkMode === "dark" ? "light" : "dark");
   };
 
   return (
     <div
-  className={`min-h-screen transition-all duration-1000 ease-in-out ${
-    darkMode === "dark" ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
-  }`}
->
+      className={`relative min-h-screen overflow-hidden transition-colors duration-[1500ms] ease-in-out ${
+        darkMode === "dark" ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
+      }`}
+    >
+      {/* Radial Expansion Effect */}
+      <motion.div
+        key={darkMode}
+        initial={{
+          clipPath: `circle(0px at ${togglePosition.x}px ${togglePosition.y}px)`,
+        }}
+        animate={{
+          clipPath: `circle(150% at ${togglePosition.x}px ${togglePosition.y}px)`,
+        }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
+        className={`absolute inset-0 ${
+          darkMode === "dark" ? "bg-gray-900" : "bg-gray-50"
+        }`}
+      />
 
       <ParticleBackground />
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
