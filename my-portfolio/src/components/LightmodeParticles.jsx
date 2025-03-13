@@ -15,7 +15,7 @@ const LightModeParticles = () => {
         fullScreen: { enable: true, zIndex: -1 },
         particles: {
           number: { value: 80, density: { enable: true, value_area: 800 } },
-          color: { value: ["#ff9a9e", "#fad0c4", "#ffdde1", "#fccb90", "#a1c4fd"] },
+          color: { value: ["#111111", "#222222", "#333333"] }, // Darker shades for blackish glow
           shape: { type: "circle" },
           opacity: { value: 0.7, random: false, anim: { enable: false } },
           size: { value: 4, random: true, anim: { enable: false } },
@@ -27,6 +27,11 @@ const LightModeParticles = () => {
             straight: false,
             out_mode: "out",
             bounce: false,
+          },
+          shadow: {
+            enable: true,
+            color: "#000000", // Black glow
+            blur: 15,
           },
         },
         detectRetina: true,

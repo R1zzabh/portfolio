@@ -6,8 +6,7 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
-import ParticleBackground from "./components/ParticleBackground";
-import LightModeParticles from "./components/LightModeParticles";
+import ParticleBackground from "./components/ParticleBackground"; // Use one particle system for both themes
 import { motion } from "framer-motion";
 
 function App() {
@@ -48,12 +47,14 @@ function App() {
         }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
         className={`absolute inset-0 ${
-          darkMode === "dark" ? "bg-gray-900 text-white" : "bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 text-gray-900"
+          darkMode === "dark"
+            ? "bg-gray-900 text-white"
+            : "bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 text-gray-900"
         }`}
       />
 
-      {/* Particle Effects */}
-      {darkMode === "dark" ? <ParticleBackground /> : <LightModeParticles />}
+      {/* Particle Effects (Same animation for both modes) */}
+      <ParticleBackground darkMode={darkMode} />
 
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 

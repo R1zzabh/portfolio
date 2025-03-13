@@ -31,7 +31,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md py-2 shadow-lg"
           : "bg-transparent py-4"
@@ -86,7 +86,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                   initial={{ rotateY: 180, opacity: 0 }}
                   animate={{ rotateY: 0, opacity: 1 }}
                   exit={{ rotateY: -180, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }} // Faster flip
+                  transition={{ duration: 0.3, ease: "easeOut" }}
                   className="absolute w-8 h-8 cursor-pointer"
                 >
                   {darkMode === "dark" ? (
@@ -111,7 +111,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                   initial={{ rotateY: 180, opacity: 0 }}
                   animate={{ rotateY: 0, opacity: 1 }}
                   exit={{ rotateY: -180, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }} // Faster flip
+                  transition={{ duration: 0.3, ease: "easeOut" }}
                   className="absolute w-8 h-8 cursor-pointer"
                 >
                   {darkMode === "dark" ? (
