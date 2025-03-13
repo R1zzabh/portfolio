@@ -7,7 +7,7 @@ import Experience from "./components/Experience";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import ParticleBackground from "./components/ParticleBackground";
-import LightModeParticles from "./components/LightModeParticles";
+import LightModeVanta from "./components/LightModeVanta";
 import { motion } from "framer-motion";
 
 function App() {
@@ -36,25 +36,20 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden transition-colors duration-[1500ms] ease-in-out">
+    <div className={`relative min-h-screen overflow-hidden transition-colors duration-[1500ms] ease-in-out`}>
       {/* Radial Expansion Effect */}
       <motion.div
         key={darkMode}
-        initial={{
-          clipPath: `circle(0px at ${togglePosition.x}px ${togglePosition.y}px)`,
-        }}
-        animate={{
-          clipPath: `circle(150% at ${togglePosition.x}px ${togglePosition.y}px)`,
-        }}
+        initial={{ clipPath: `circle(0px at ${togglePosition.x}px ${togglePosition.y}px)` }}
+        animate={{ clipPath: `circle(150% at ${togglePosition.x}px ${togglePosition.y}px)` }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
-        className={`absolute inset-0 ${
-          darkMode === "dark" ? "bg-gray-900 text-white" : "bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 text-gray-900"
-        }`}
+        className={`absolute inset-0 ${darkMode === "dark" ? "bg-gray-900" : "bg-gray-50"}`}
       />
 
-      {/* Particle Effects */}
-      {darkMode === "dark" ? <ParticleBackground /> : <LightModeParticles />}
+      {/* Background Animations */}
+      {darkMode === "dark" ? <ParticleBackground /> : <LightModeVanta />}
 
+      {/* Navbar should be fixed at the top */}
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
       <main className="container mx-auto px-4 py-8 relative z-10">
