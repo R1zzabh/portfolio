@@ -61,7 +61,7 @@ const Contact = () => {
             <div className="space-y-6">
               <div className="flex items-center">
                 <FaEnvelope className="text-indigo-600 text-2xl mr-4" />
-                <a href="mailto:rishabh@example.com" className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">rishabh@example.com</a>
+                <a href="mailto:roy.ranjan.rrm@gmail.com" className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">roy.ranjan.rrm@gmail.com</a>
               </div>
               <div className="flex space-x-6 mt-8">
                 <a href="https://github.com/R1zzabh" target="_blank" rel="noopener noreferrer" 
