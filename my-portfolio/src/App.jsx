@@ -6,7 +6,7 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
-import ParticleBackground from "./components/ParticleBackground"; // Use one particle system for both themes
+import ParticleBackground from "./components/ParticleBackground";
 import { motion } from "framer-motion";
 
 function App() {
@@ -35,14 +35,14 @@ function App() {
   };
 
   return (
-    <div className={`relative min-h-screen overflow-hidden transition-colors duration-[1500ms] ease-in-out`}>
+    <div className={`relative min-h-screen w-screen max-w-full overflow-x-hidden transition-colors duration-[1500ms] ease-in-out`}>
       {/* Radial Expansion Effect */}
       <motion.div
         key={darkMode}
         initial={{ clipPath: `circle(0px at ${togglePosition.x}px ${togglePosition.y}px)` }}
         animate={{ clipPath: `circle(150% at ${togglePosition.x}px ${togglePosition.y}px)` }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
-        className={`absolute inset-0 ${
+        className={`absolute inset-0 w-screen max-w-full ${
           darkMode === "dark"
             ? "bg-gray-900 text-white"
             : "bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 text-gray-900"
@@ -55,12 +55,12 @@ function App() {
       {/* Navbar should be fixed at the top */}
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
-      <main className="container mx-auto px-4 py-8 relative z-10">
-        <section id="home" className="py-20">
+      <main className="container mx-auto px-4 py-8 relative z-10 w-screen max-w-full">
+        <section id="home" className="py-20 w-full">
           <Hero />
         </section>
 
-        <section id="projects" className="py-20">
+        <section id="projects" className="py-20 w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ function App() {
           </motion.div>
         </section>
 
-        <section id="skills" className="py-20">
+        <section id="skills" className="py-20 w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -82,7 +82,7 @@ function App() {
           </motion.div>
         </section>
 
-        <section id="experience" className="py-20">
+        <section id="experience" className="py-20 w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -93,7 +93,7 @@ function App() {
           </motion.div>
         </section>
 
-        <section id="blog" className="py-20">
+        <section id="blog" className="py-20 w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -104,7 +104,7 @@ function App() {
           </motion.div>
         </section>
 
-        <section id="contact" className="py-20">
+        <section id="contact" className="py-20 w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -116,7 +116,7 @@ function App() {
         </section>
       </main>
 
-      <footer className="bg-gray-800 dark:bg-black text-white py-6 relative z-10">
+      <footer className="bg-gray-800 dark:bg-black text-white py-6 relative z-10 w-screen max-w-full">
         <div className="container mx-auto px-4 text-center">
           <p>© {new Date().getFullYear()} Rishabh. All rights reserved.</p>
         </div>
